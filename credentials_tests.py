@@ -1,15 +1,17 @@
+import unittest
 import pyperclip
-
-class Credentials:
+from credentials import Credentials
     '''
-    This class will generate new instances of credentials
-    '''
-
-    Credentials_list = []
-    '''
-    Created empty Credentials list
+    unittest and pyperclip module followed by class module to ensure no errors.
     '''
 
-    def __init__(self,account,login_name,password):
+# class TestPasswords(unittest.TestCase):
 
-        
+#     def setUp(self);
+#     '''
+#     The set up method defines instructions that will be run,
+#     before each test method.
+#     '''
+#         self.new_Credentials = Credentials("gmail","JohnDoe","johndoe2020")
+
+
