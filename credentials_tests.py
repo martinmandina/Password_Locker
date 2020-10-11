@@ -70,6 +70,15 @@ class TestPasswords(unittest.TestCase):
         self.assertEqual(len(Credentials.credentials_list),1)
 
 
+    def test_find_credentials_by_account(self):
+        '''
+        Test check if we can get credentials by marching account
+        '''
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("twitter","DavidMark","davidmark2020")
+        test_credentials.save_credentials()
+
+        found_credentials = Credentials.find_by_account("twitter")
 
 
 if __name__ == '__main__':
