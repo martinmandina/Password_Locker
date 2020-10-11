@@ -34,12 +34,22 @@ from credentials import Credentials
 
     def check_existing_passwords(login_name):
         '''
-        This functions checks if a password exists with the above login_name and returns a boolean.
+        This function checks if a password exists with the above login_name and returns a boolean.
         '''
         return passwords.passwords_exist(login_name)
 
 
+    def display_passwords():
+        '''
+        This function checks and returns all the saved passwords
+        '''
+        return passwords.display_passwords()
 
+
+    # def copy_login_name(passwords)
+    #     '''
+    #     This Function copies a login_name
+    #     '''
 
 
 # if __name__== '__main__':
