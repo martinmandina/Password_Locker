@@ -13,9 +13,16 @@ from credentials import Credentials
 
     def save_passwords(passwords):
         '''
-         A save_passwords function that takes in a password object.
+        A save_passwords function that takes in a password object.
         '''
          password.save_passwords()
+
+
+    def del_passwords(passwords):
+        '''
+        This function del_passwords deletes a contact
+        '''
+        passwords.delete_passwords()
 
 
 

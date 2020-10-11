@@ -81,7 +81,7 @@ class TestPasswords(unittest.TestCase):
 #         found_credentials = Credentials.find_by_account("twitter")
 
 
- if __name__ == '__main__':
+#  if __name__ == '__main__':
      
-     unittest.main()        
+#      unittest.main()        
 
