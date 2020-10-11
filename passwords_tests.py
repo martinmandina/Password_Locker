@@ -15,7 +15,8 @@ class TestPasswords(unittest.TestCase):
         Using tearDown method ensures after every testrun there is a clean up.
         tearDown method ensures accurate results.
         '''
-    
+        Passwords.Passwords_list = []
+  
     def test_init(self):
         '''
         The first test case is to confirm the objects is instatiated correctly.
