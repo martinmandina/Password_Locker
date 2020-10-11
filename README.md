@@ -4,18 +4,20 @@ This is an Application that assists management of passwords and even in the proc
 ## AUTHOR:
 Martin Sila Mandina
 ## TECHNOLOGIES
-the technologies used include:
 ### Python
 ### Terminal
 ### Python Test Module
 ## DEPENDENCIES
-The Project uses unittest module and python shell and pip for installation
+### unittest module 
+### python shell
+### pip for installation
 ## SETUP & INSTALLATION INSTRUCTIONS
 1. Clone the repository to your computer.
 2. Open Terminal.
 3. Change working directory to preffered location where you want to clone directory.
 4. Type git clone, and then paste the URL you copied earlier.
-
+5. After download open on your preffered editor to access contents.
+6. on Terminal type python(version) to access the python shell and run the project.
 ## CONTACT INFORMATION
 Martin Sila Mandina
 P.O. Box 70055 - 00400 Nairobi, Kenya
