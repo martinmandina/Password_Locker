@@ -8,6 +8,7 @@ class TestPasswords(unittest.TestCase):
         '''
         The Set up method is to run before each test case.
         '''
+        
         self.new_passwords = Passwords("JohnDoe","johndoe2020")
 
 
@@ -16,6 +17,7 @@ class TestPasswords(unittest.TestCase):
         Using tearDown method ensures after every testrun there is a clean up.
         tearDown method ensures accurate results.
         '''
+       
         Passwords.passwords_list = []
   
 
@@ -32,8 +34,8 @@ class TestPasswords(unittest.TestCase):
         this test case is to ensure that we can save a password object into out
         passwords list
         '''
+        
         self.new_passwords.save_passwords()
-
         self.assertEqual(len(Passwords.passwords_list),1)
 
 
@@ -42,6 +44,7 @@ class TestPasswords(unittest.TestCase):
         test_save_multiple_passwords testcase to check if we can save multiple passwords
         objects to our passwords_list
         '''
+        
         self.new_passwords.save_passwords()
         test_passwords = Passwords("MartinMandina","martinmandina2020")
         test_passwords.save_passwords()
@@ -53,6 +56,7 @@ class TestPasswords(unittest.TestCase):
         '''
         In this testcase we check if we can remove a password object once created
         '''
+       
         self.new_passwords.save_passwords()
         test_passwords = Passwords("MartinMandina","martinmandina2020")
         test_passwords.save_passwords()
@@ -63,7 +67,7 @@ class TestPasswords(unittest.TestCase):
 
     def test_find_passwords_by_number(self):
         '''
-        test to check if we can find a passwords by phone number and display information
+        test to check if we can find a password by phone number and display information
         '''
 
         self.new_passwords.save_passwords()
@@ -73,6 +77,26 @@ class TestPasswords(unittest.TestCase):
         
         self.assertEqual(found_passwords.password,test_passwords.password)
 
+
+    def test_password_exists(self):
+        '''
+        check if a password exits and if result can return a boolean value.
+        '''
+        
+        self.new_passwords.save_passwords()
+        test_passwords = Passwords("JohnDoe","johndoe2020")
+        test_passwords.save_passwords()
+        password_exists = Passwords.password_exist("JohnDoe")
+
+        self.assertTrue(password_exists)
+
+
+    def test_diplay_all_passwords(self):
+        '''
+        This method returns a list of all saved contacts
+        '''
+
+        self.assertEqual(Passwords.display_passwords(),Passwords.passwords_list)
 
 
 

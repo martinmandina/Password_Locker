@@ -33,11 +33,33 @@ class Passwords:
 
             Passwords.passwords_list.remove(self)
    
+
         @classmethod
-        def find_by_login_name(cls,password):
+        def find_by_login_name(cls,passwords):
             '''
             a decorator that belongs to the whole class.
+
+            login   :   login name to search for
+            Returns : passwords of person that matches the number login name.
+            '''
+
+            for password in cls.passwords_list:
+                if passwords.login_name == password:
+                    return password
+
+        @classmethod
+        def passwords_exists(cls,login_name):
+            '''
+            Class method password_exist that loops through all saved contacts and checks for similarities.
             '''
             for passwords in cls.passwords_list:
-                if passwords.login_name == password:
-                    return passwords
+                if passwords.login_name == login_name:
+                    return True
+            return False
+
+
+
+
+
+    
+        
