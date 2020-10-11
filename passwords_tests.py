@@ -8,7 +8,7 @@ class TestPasswords(unittest.TestCase):
         '''
         The Set up method is to run before each test case.
         '''
-        self.new_Password = Passwords("JohnDoe","johndoe2020")
+        self.new_Passwords = Passwords("JohnDoe","johndoe2020")
 
     def tearDown(self):
         '''
@@ -16,3 +16,13 @@ class TestPasswords(unittest.TestCase):
         tearDown method ensures accurate results.
         '''
     
+    def test_init(self):
+        '''
+        The first test case is to confirm the objects is instatiated correctly.
+        '''
+        self.assertEqual(self.new_Passwords.login_name,"JohnDoe")
+        self.assertEqual(self.new_Passwords.password,"johndoe2020")
+
+
+if __name__ == '__main__':
+    unittest.main()
