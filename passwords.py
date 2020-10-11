@@ -5,7 +5,7 @@ class Passwords:
     Class that generates new instances of passwords.
     """
 
-    Passwords_list = []
+    passwords_list = []
     '''
     Created empty  password list
     '''

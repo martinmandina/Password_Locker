@@ -10,7 +10,7 @@ class TestPasswords(unittest.TestCase):
         before each test method.
         '''
     
-        self.new_Credentials = Credentials("gmail","JohnDoe","johndoe2020")
+        self.new_credentials = Credentials("gmail","JohnDoe","johndoe2020")
 
     def tearDown(self):
         '''
@@ -18,5 +18,17 @@ class TestPasswords(unittest.TestCase):
         this to ensure accurate results
         '''
 
-        Credentials.Credentials_list = []
+        Credentials.credentials_list = []
+
+    def test_init(self):
+        '''
+        Create a test_instance to check if all our objects are instatiated correctly
+        '''
+
+        self.assertEqual(self.new_credentials.account,"gmail")
+        self.assertEqual(self.new_credentials.login_name,"JohnDoe")
+        self.assertEqual(self.new_credentials.password,"johndoe2020")
+
+if __name__ == '__main__':
+    unittest.main()        
 

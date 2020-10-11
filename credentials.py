@@ -5,7 +5,7 @@ class Credentials:
     This class will generate new instances of credentials
     '''
 
-    Credentials_list = []
+    credentials_list = []
     '''
     Created empty Credentials list
     '''
