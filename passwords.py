@@ -1,15 +1,18 @@
-class Passwords:
+import pyperclip
+
+class passwords:
     """
-    Class that generates new instances of passwords
+    Class that generates new instances of passwordss.
     """
 
-    def __init__(self,login_name,password,website):
+    passwords_list = [] # Empty passwords list
 
-        '''
-        __init__ method that helps us define properties for our objects.
+    def __init__(self,login_name,password):
 
-        Args:
-            login_name: New contact first name.
-            password: New contact phone number.
-            website : Where the password is used eg instagram.
-        '''
+           
+        self.login_name = login_name
+        self.password = password
+    
+
+ 
+   
