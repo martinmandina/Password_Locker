@@ -20,3 +20,14 @@ class Credentials:
     Create constructur and pass 4 arguments.
     The self argument above is a special keyword.
     '''
+
+    def save_credentials(self):
+
+        '''
+        save_credential method saves credential objects into passwords_list
+        '''
+
+        Credentials.credentials_list.append(self)
+
+
+    
