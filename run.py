@@ -25,6 +25,16 @@ from credentials import Credentials
         passwords.delete_passwords()
 
 
+    def find_passwords(login_name):
+        '''
+        This function matches a password by login_name and returns the passsword.
+        '''
+        return passwords.find_by_login_name(login_name)
+
+
+    
+
+
 
 
 # if __name__== '__main__':
