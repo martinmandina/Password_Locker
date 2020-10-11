@@ -1,23 +1,27 @@
 import pyperclip
 
 class Passwords:
-    """
-    Class that generates new instances of passwords.
-    """
+        '''
+        Class that generates new instances of passwords.
+        '''
 
-    passwords_list = []
-    '''
-    Created empty  password list
-    '''
-
-    def __init__(self,login_name,password):
+        passwords_list = []
+        
+        def __init__(self,login_name,password):
            
-        self.login_name = login_name
-        self.password = password
-    '''
-    Creates Constructur and passed 3 arguments.
-    The self argument above is a special keyword.
-    '''
+            self.login_name = login_name
+            self.password = password
+        '''
+        Creates Constructur and passed 3 arguments.
+        The self argument above is a special keyword.
+        '''
 
- 
+        passwords_list = []
+
+        def save_passwords(self):
+            '''
+            create a save_passwords method that is called on,
+            a contact object.
+            '''
+            Passwords.passwords_list.append(self)
    

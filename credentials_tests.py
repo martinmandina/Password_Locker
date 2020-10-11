@@ -12,6 +12,7 @@ class TestPasswords(unittest.TestCase):
     
         self.new_credentials = Credentials("gmail","JohnDoe","johndoe2020")
 
+
     def tearDown(self):
         '''
         TearDown method executes a set of instructions,
@@ -19,6 +20,7 @@ class TestPasswords(unittest.TestCase):
         '''
 
         Credentials.credentials_list = []
+
 
     def test_init(self):
         '''

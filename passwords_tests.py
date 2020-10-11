@@ -10,6 +10,7 @@ class TestPasswords(unittest.TestCase):
         '''
         self.new_passwords = Passwords("JohnDoe","johndoe2020")
 
+
     def tearDown(self):
         '''
         Using tearDown method ensures after every testrun there is a clean up.
@@ -17,12 +18,22 @@ class TestPasswords(unittest.TestCase):
         '''
         Passwords.passwords_list = []
   
+
     def test_init(self):
         '''
         The first test case is to confirm the objects is instatiated correctly.
         '''
         self.assertEqual(self.new_passwords.login_name,"JohnDoe")
         self.assertEqual(self.new_passwords.password,"johndoe2020")
+
+
+    def test_save_passwords(self):
+        '''
+        this test case is to ensure that we can save a password object into out
+        passwords list
+        '''
+        self.new_passwords.save_passwords()
+        self.assertEqual(len(Passwords.passwords_list),1)
 
 
 if __name__ == '__main__':
