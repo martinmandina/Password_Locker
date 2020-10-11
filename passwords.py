@@ -7,6 +7,7 @@ class Passwords:
 
         passwords_list = []
         
+     
         def __init__(self,login_name,password):
            
             self.login_name = login_name
@@ -18,10 +19,18 @@ class Passwords:
 
         passwords_list = []
 
+
         def save_passwords(self):
             '''
             create a save_passwords method that is called on,
             a contact object.
             '''
             Passwords.passwords_list.append(self)
-   
+  
+  
+        def delete_passwords(self):
+            '''
+            delete_passwords method deletes a saved passwords from the passwords_list
+            '''
+
+            Passwords.passwords_list.remove(self)

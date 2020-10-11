@@ -47,6 +47,18 @@ class TestPasswords(unittest.TestCase):
         self.assertEqual(len(Passwords.passwords_list),2)
 
 
+    def test_delete_passwords(self):
+        '''
+        In this testcase we check if we can remove a password object once created
+        '''
+        self.new_passwords.save_passwords()
+        test_passwords = Passwords("MartinMandina","martinmandina2020")
+        test_passwords.save_passwords()
+        self.new_passwords.delete_passwords()
+        self.assertEqual(len(Passwords.passwords_list),1)
+
+
+
 
 
 
