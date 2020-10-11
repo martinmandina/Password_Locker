@@ -32,7 +32,12 @@ from credentials import Credentials
         return passwords.find_by_login_name(login_name)
 
 
-    
+    def check_existing_passwords(login_name):
+        '''
+        This functions checks if a password exists with the above login_name and returns a boolean.
+        '''
+        return passwords.passwords_exist(login_name)
+
 
 
 
