@@ -33,6 +33,7 @@ class TestPasswords(unittest.TestCase):
         passwords list
         '''
         self.new_passwords.save_passwords()
+
         self.assertEqual(len(Passwords.passwords_list),1)
 
 
@@ -44,6 +45,7 @@ class TestPasswords(unittest.TestCase):
         self.new_passwords.save_passwords()
         test_passwords = Passwords("MartinMandina","martinmandina2020")
         test_passwords.save_passwords()
+
         self.assertEqual(len(Passwords.passwords_list),2)
 
 
@@ -55,10 +57,21 @@ class TestPasswords(unittest.TestCase):
         test_passwords = Passwords("MartinMandina","martinmandina2020")
         test_passwords.save_passwords()
         self.new_passwords.delete_passwords()
+
         self.assertEqual(len(Passwords.passwords_list),1)
 
 
+    def test_find_passwords_by_number(self):
+        '''
+        test to check if we can find a passwords by phone number and display information
+        '''
 
+        self.new_passwords.save_passwords()
+        test_passwords = Passwords("JohnDoe","johndoe2020") # new passwords
+        test_passwords.save_passwords()
+        found_passwords = Passwords.find_by_login_name("JohnDoe")
+        
+        self.assertEqual(found_passwords.password,test_passwords.password)
 
 
 

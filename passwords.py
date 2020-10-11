@@ -4,7 +4,6 @@ class Passwords:
         '''
         Class that generates new instances of passwords.
         '''
-
         passwords_list = []
         
      
@@ -16,7 +15,6 @@ class Passwords:
         Creates Constructur and passed 3 arguments.
         The self argument above is a special keyword.
         '''
-
         passwords_list = []
 
 
@@ -34,3 +32,12 @@ class Passwords:
             '''
 
             Passwords.passwords_list.remove(self)
+   
+        @classmethod
+        def find_by_login_name(cls,password):
+            '''
+            a decorator that belongs to the whole class.
+            '''
+            for passwords in cls.passwords_list:
+                if passwords.login_name == password:
+                    return passwords
