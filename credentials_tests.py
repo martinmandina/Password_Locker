@@ -53,9 +53,9 @@ class TestPasswords(unittest.TestCase):
         
         test_credentials = Credentials("twitter","DavidMark","davidmark2020") 
         
-        test_credentials.save_credential()
+        test_credentials.save_credentials()
         
-        self.assertEqual(len(Credentials.credential_list),2) 
+        self.assertEqual(len(Credentials.credentials_list),2) 
 
 
 
