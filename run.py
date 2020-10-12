@@ -31,34 +31,30 @@ def find_passwords(login_name):
         return Passwords.find_by_login_name(login_name)
 
 
-# def check_existing_passwords(login_name):
-#         '''
-#         This function checks if a password exists with the above login_name and returns a boolean.
-#         '''
-#         return Passwords.passwords_exist(login_name)
+def check_existing_passwords(login_name):
+        '''
+        This function checks if a password exists with the above login_name and returns a boolean.
+        '''
+        return Passwords.passwords_exist(login_name)
 
 
-# def display_passwords():
-#         '''
-#         This function checks and returns all the saved passwords
-#         '''
-#         return Passwords.display_passwords()
+def display_passwords():
+        '''
+        This function checks and returns all the saved passwords
+        '''
+        return Passwords.display_passwords()
 
 
-    # def copy_login_name(passwords)
-    #     '''
-    #     This Function copies a login_name
-    #     '''
     
 def main():
         print("Hello user Welcome to your passwords list. What is your name?")
         user_name = input()
 
-        print("Hello {user_name}. what would you like to do?")
+        print(f"Hello {user_name}. what would you like to do?")
         print('\n')
 
 while True:
-                    print("Use these short codes : cc - create a new passwords, dc - display passwords, fc -find a passwords, ex -exit the passwords list ")
+                    print("Use these short codes : cp - create a new passwords, dp - display passwords, fp -find a passwords, ex -exit the passwords list ")
 
                     short_code = input().lower()
 

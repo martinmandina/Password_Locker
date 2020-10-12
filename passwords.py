@@ -52,8 +52,8 @@ class Passwords:
             '''
             Class method password_exist that loops through all saved contacts and checks for similarities.
             '''
-            for passwords in cls.passwords_list:
-                if passwords.login_name == login_name:
+            for Passwords in cls.passwords_list:
+                if Passwords.login_name == login_name:
                     return True
             return False
 
