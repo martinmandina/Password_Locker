@@ -59,15 +59,57 @@ while True:
                     short_code = input().lower()
 
                     if short_code == 'cp':
-                            print("New passwords")
+                            print("New password")
                             print("-"*10)
 
-                            print ("login name ....")
+                            print("login name ....")
                             login_name = input()
 
                         
                             print("credential ...")
                             credential = input()
+
+                    save_passwords(create_passwords(login_name,password))
+                            
+                        print ('\n')
+                        print (f'New password {login_name} {password} created')
+                        print ('\n')
+
+                        elif short_code == 'dp':
+
+                    if display_passwords():
+                                    print("Here is a list of all your passwords")
+                                    print('\n')
+
+                                    for passwords in display_passwords():
+                                           # print(f'{account:40s} ({ratio:3.2f}) -> AUD {splitAmount}')
+                                        print(f'{Passwords.first_name} {Passwords.last_name} {Passwords.phone_number}')
+                                        print("\n")
+                            else:
+                                    print('\n')
+                                    print("You dont seem to have any passwordss saved yet")
+                                    print('\n')
+
+                    elif short_code == 'fp':
+
+                            print("Enter the login_name you want to search for")
+
+                            search_number = input()
+                            if check_existing_passwords(search_password):
+                                    search_passwords = find_passwords(login_name)
+                                    print(f"{search_passwords.login_name} {search_passwords.password}")
+                                    print('-' * 20)
+
+                                    print(f"Phone number.......{search_passwords.phone_number}")
+                                    print(f"Email address.......{search_passwords.email}")
+                            else:
+                                    print("That passwords does not exist")
+
+                    elif short_code == "ex":
+                            print("Bye .......")
+                            break
+                    else:
+                            print("I really didn't get that. Please use the short codes")
 
 if __name__== '__main__':
         main()         
