@@ -65,7 +65,7 @@ class TestPasswords(unittest.TestCase):
         self.assertEqual(len(Passwords.passwords_list),1)
 
 
-    def test_find_password_by_user_name(self):
+    def test_find_password(self):
         '''
         test to check if we can find a password by phone number and display information
         '''
@@ -73,9 +73,9 @@ class TestPasswords(unittest.TestCase):
         self.new_passwords.save_passwords()
         test_passwords = Passwords("JohnDoe","johndoe2020") # new passwords
         test_passwords.save_passwords()
-        found_passwords = Passwords.find_by_user_name("JohnDoe")
+        found_password = Passwords.find_password_by_user_name('JohnDoe')
         
-        self.assertEqual(found_passwords.password,test_passwords.password)
+        self.assertEqual(found_password.password,test_passwords.password)
 
 
     def test_password_exists(self):

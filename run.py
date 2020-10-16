@@ -3,11 +3,11 @@
 from passwords import Passwords
 from credentials import Credentials
 
-def create_passwords(login_name,password):
+def create_passwords(user_name,password):
     '''
     This is a function that creates a new password
     '''
-    new_passwords = Passwords(login_name,password)
+    new_passwords = Passwords(user_name,password)
     return new_passwords
 
 def save_passwords(passwords):
@@ -24,11 +24,11 @@ def del_passwords(passwords):
     passwords.delete_passwords()
 
 
-def find_passwords(login_name):
+def find_passwords(user_name):
     '''
     This function matches a password by login_name and returns the passsword.
     '''
-    return Passwords.find_by_login_name(login_name)
+    return Passwords.find_password_by_user_name(user_name)
 
 
 def check_existing_passwords(login_name):
