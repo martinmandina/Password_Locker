@@ -98,7 +98,7 @@ class TestPasswords(unittest.TestCase):
 
         self.assertEqual(Passwords.display_passwords(),Passwords.passwords_list)
 
-
+    
 
 if __name__ == '__main__':
     unittest.main()

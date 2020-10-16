@@ -35,7 +35,7 @@ class Passwords:
 
 
     @classmethod
-    def find_by_user_name(cls,passwords):
+    def find_password_by_user_name(cls,passwords):
         '''
         a decorator that belongs to the whole class.
 
@@ -61,6 +61,14 @@ class Passwords:
             if Passwords.password == string:
                 return True
         return False
+
+    @classmethod
+    def display_passwords(cls):
+        '''
+        method that returns the password and displays them
+        '''
+        return cls.passwords_list
+    
 
 
 
