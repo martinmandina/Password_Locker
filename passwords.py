@@ -48,7 +48,7 @@ class Passwords:
                 return password
 
     @classmethod
-    def passwords_exist(cls,string):
+    def passwords_exists(cls,string):
         '''
         Method that checks if a password exists from the password list.
         Args:
@@ -58,7 +58,7 @@ class Passwords:
         '''
 
         for Passwords in cls.passwords_list:
-            if Passwords.user_name == user_name:
+            if Passwords.password == string:
                 return True
         return False
 

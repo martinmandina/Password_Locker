@@ -86,14 +86,14 @@ class TestPasswords(unittest.TestCase):
         self.new_passwords.save_passwords()
         test_passwords = Passwords("JohnDoe","johndoe2020")
         test_passwords.save_passwords()
-        password_exists = Passwords.password_exist("JohnDoe")
+        password_exists = Passwords.passwords_exists("JohnDoe")
 
         self.assertTrue(password_exists)
 
 
     def test_diplay_all_passwords(self):
         '''
-        This method returns a list of all saved contacts
+        This method returns a list of all saved passwords
         '''
 
         self.assertEqual(Passwords.display_passwords(),Passwords.passwords_list)
