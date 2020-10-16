@@ -26,16 +26,17 @@ def del_passwords(passwords):
 
 def find_passwords(user_name):
     '''
-    This function matches a password by login_name and returns the passsword.
+    This function matches a password by user
+    _name and returns the passsword.
     '''
     return Passwords.find_password_by_user_name(user_name)
 
 
-def check_existing_passwords(login_name):
+def check_existing_passwords(user_name):
     '''
     This function checks if a password exists with the above login_name and returns a boolean.
     '''
-    return Passwords.passwords_exist(login_name)
+    return Passwords.passwords_exists(user_name)
 
 
 def display_passwords():
