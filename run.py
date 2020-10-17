@@ -55,22 +55,26 @@ def main():
     print('\n')
 
     while True:
-        print("Use these short codes : cp - create a new passwords, dp - display passwords, fp -find a passwords, ex -exit the passwords list ")
+        print(f"{user_name} Please use these short codes:\n"
+            "cp - to create a new password,\n"
+            "dp - display the password,\n"
+            "fp - find a password,\n"
+            "ex - to exit the passwords list \n")
 
         short_code = input().lower()
 
         if short_code == 'cp':
            
-            print("-"*10)
+            print("-"*15)
 
-            print("login name ....")
-            login_name = input()
+            print("user name ....")
+            user_name = input()
 
         
             print("password ...")
             password = input()
 
-            save_passwords(create_passwords(login_name,password))
+            save_passwords(create_passwords(user_name,password))
                 
             print ('\n')
             print (f'New password {login_name} {password} created')
