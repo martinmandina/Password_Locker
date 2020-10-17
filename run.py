@@ -9,12 +9,19 @@ def create_passwords(user_name,password):
     '''
     new_passwords = Passwords(user_name,password)
     return new_passwords
-
+    
 def save_passwords(passwords):
     '''
     A save_passwords function that takes in a password object.
     '''
     passwords.save_passwords()
+
+def display_passwords():
+    '''
+    This function checks and returns all the saved passwords
+    '''
+    return Passwords.display_passwords()
+
 
 
 def del_passwords(passwords):
@@ -39,50 +46,45 @@ def check_existing_passwords(user_name):
     return Passwords.passwords_exists(user_name)
 
 
-def display_passwords():
-    '''
-    This function checks and returns all the saved passwords
-    '''
-    return Passwords.display_passwords()
 
 
     
 def main():
-    print("Hello user Welcome to your passwords list. What is your name?")
+    print("Hello user! Welcome, to your password list,\n" 
+            "What is your name?\n")
     user_name = input()
-
-    print(f"Hello {user_name}. what would you like to do?")
-    print('\n')
+    print("-"*30)
+    print(f"Hallo {user_name} Welcome.")
+    print("-"*30)
 
     while True:
-        print(f"{user_name} Please use these short codes:\n"
+        print(f"{user_name} Please use these short codes for easier access :\n"
             "cp - to create a new password,\n"
             "dp - display the password,\n"
             "fp - find a password,\n"
             "ex - to exit the passwords list \n")
-
+        print("-"*30)
         short_code = input().lower()
-
+       
         if short_code == 'cp':
-           
-            print("-"*15)
-
-            print("user name ....")
+            print("-"*30)
+            print("Type your username?")
             user_name = input()
 
-        
-            print("password ...")
+            print("-"*30)        
+            print("Type your new password")
             password = input()
+            print("-"*30)
 
             save_passwords(create_passwords(user_name,password))
                 
             print ('\n')
-            print (f'New password {login_name} {password} created')
+            print (f'New password {password} created for {user_name}')
             print ('\n')
-            print("-"*10)
+            print("-"*30)
             
         elif short_code == 'dp':
-
+            print ('\n')
             if display_passwords():
                 print("Here is a list of all your passwords")
                 print('\n')
@@ -93,7 +95,7 @@ def main():
                     print("\n")
             else:
                     print('\n')
-                    print("You dont seem to have any passwordss saved yet")
+                    print(f"{user_name} you dont have any passwords saved at the moment")
                     print('\n')
 
         elif short_code == 'fp':
