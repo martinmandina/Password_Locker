@@ -22,14 +22,11 @@ def display_passwords():
     '''
     return Passwords.display_passwords()
 
-
-
-def del_passwords(passwords):
+def check_existing_passwords(user_name):
     '''
-    This function del_passwords deletes a contact
+    This function checks if a password exists with the above login_name and returns a boolean.
     '''
-    passwords.delete_passwords()
-
+    return Passwords.passwords_exists(user_name)
 
 def find_passwords(user_name):
     '''
@@ -38,17 +35,13 @@ def find_passwords(user_name):
     '''
     return Passwords.find_password_by_user_name(user_name)
 
-
-def check_existing_passwords(user_name):
+def del_passwords(passwords):
     '''
-    This function checks if a password exists with the above login_name and returns a boolean.
+    This function del_passwords deletes a contact
     '''
-    return Passwords.passwords_exists(user_name)
+    passwords.delete_passwords()
 
-
-
-
-    
+   
 def main():
     print("Hello user! Welcome, to your password list,\n" 
             "What is your name?\n")
@@ -59,10 +52,10 @@ def main():
 
     while True:
         print(f"{user_name} Please use these short codes for easier access :\n"
-            "cp - to create a new password,\n"
-            "dp - display the password,\n"
-            "fp - find a password,\n"
-            "ex - to exit the passwords list \n")
+            "cp - to create a new password.\n"
+            "dp - display your password or multiple passwords.\n"
+            "fp - find your saved password.\n"
+            "ex - to exit your passwords list.\n")
         print("-"*30)
         short_code = input().lower()
        
@@ -86,35 +79,35 @@ def main():
         elif short_code == 'dp':
             print ('\n')
             if display_passwords():
-                print("Here is a list of all your passwords")
+                print(f"{user_name} this is a list all your passwords you saved")
                 print('\n')
 
-                for passwords in display_passwords():
-                    #print(f'{account:40s} ({ratio:3.2f}) -> AUD {splitAmount}')
-                    print(f'{Passwords.first_name} {Passwords.last_name} {Passwords.phone_number}')
+                for Passwords in display_passwords():
+                    print(f'"{Passwords.password}" ')
                     print("\n")
+                    print("-"*30)
             else:
                     print('\n')
-                    print(f"{user_name} you dont have any passwords saved at the moment")
+                    print(f"{user_name} currently you dont have any passwords saved at the moment")
                     print('\n')
 
         elif short_code == 'fp':
 
-                print("Enter the login_name you want to search for")
-
-                search_number = input()
-                if check_existing_passwords(search_password):
-                        search_passwords = find_passwords(login_name)
-                        print(f"{search_passwords.login_name} {search_passwords.password}")
+                print("Enter the 'user name' you used to save your password ")
+                print("-"*30)
+                user_name = input()
+                if check_existing_passwords(user_name):
+                        user_name =  find_passwords(user_name)
+                        print(f"{user_name.password}")
                         print('-' * 20)
 
-                        print(f"Phone number.......{search_passwords.phone_number}")
-                        print(f"Email address.......{search_passwords.email}")
+                        print(f"password is ..{user_name.find_password_by_user_name}")
+                        print("-"*30)
                 else:
-                        print("That passwords does not exist")
-
+                        print("no passwords found that match your 'user name'")
+                        print("-"*30)
         elif short_code == "ex":
-                print("Bye .......")
+                print("Thank you....")
                 break
         else:
                 print("I really didn't get that. Please use the short codes")
